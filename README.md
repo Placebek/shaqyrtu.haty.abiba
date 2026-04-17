@@ -1,1 +1,0 @@
-# shaqyrtu.haty.abiba

@@ -1,0 +1,214 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #2C1810;
+}
+
+.bgPattern {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.photoBg {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.photoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(10%) brightness(0.38) saturate(0.9);
+}
+
+.photoOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(44, 24, 16, 0.72) 0%,
+    rgba(44, 24, 16, 0.28) 40%,
+    rgba(44, 24, 16, 0.28) 60%,
+    rgba(44, 24, 16, 0.82) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hosts {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  font-weight: 300;
+}
+
+.hostsSub {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--cream);
+  opacity: 0.85;
+  font-weight: 300;
+}
+
+.namesWrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.nameGroom,
+.nameBride {
+  font-family: var(--font-serif);
+  font-size: clamp(52px, 10vw, 88px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 4px;
+}
+
+.nameAmpersand {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  color: var(--gold);
+  font-style: italic;
+  line-height: 1;
+}
+
+.dateWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.dateBlock {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dateNum {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 300;
+  color: var(--cream);
+  letter-spacing: 2px;
+}
+
+.dateSep {
+  color: var(--gold);
+  font-size: 28px;
+}
+
+.dateLabel {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: var(--gold-light);
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.ctaWrapper {
+  margin-top: 10px;
+}
+
+/* Corners */
+.cornerTL,
+.cornerTR,
+.cornerBL,
+.cornerBR {
+  position: absolute;
+  z-index: 10;
+  transition: transform 0.1s ease;
+}
+
+.cornerTL { top: 20px; left: 20px; }
+.cornerTR { top: 20px; right: 20px; }
+.cornerBL { bottom: 20px; left: 20px; }
+.cornerBR { bottom: 20px; right: 20px; }
+
+/* Floating ornaments */
+.floatOrnLeft {
+  position: absolute;
+  left: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  transition: transform 0.1s ease;
+}
+
+.floatOrnRight {
+  position: absolute;
+  right: -40px;
+  top: 30%;
+  z-index: 5;
+  transition: transform 0.1s ease;
+}
+
+/* Scroll indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: fadeIn 2s ease 2s both;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: pulse 2s ease infinite;
+}
+
+.scrollText {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .namesWrapper {
+    gap: 12px;
+  }
+  .cornerTL, .cornerTR, .cornerBL, .cornerBR {
+    display: none;
+  }
+  .floatOrnLeft, .floatOrnRight {
+    display: none;
+  }
+}

@@ -1,0 +1,121 @@
+.details {
+  background: var(--green-mid);
+  padding: 100px 20px;
+  position: relative;
+}
+
+.bgPattern {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.titleBlock {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.sectionLabel {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: var(--gold);
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 300;
+  color: var(--text-dark);
+  letter-spacing: 2px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  padding: 36px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  border-color: rgba(201, 168, 76, 0.55);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(201, 168, 76, 0.15);
+}
+
+.cardWide {
+  grid-column: span 1;
+}
+
+.cardIcon {
+  margin-bottom: 8px;
+}
+
+.cardTitle {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.cardMain {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 300;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.cardSub {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--green-pale);
+  font-weight: 300;
+}
+
+.mapBtn {
+  margin-top: 8px;
+  font-size: 10px !important;
+  padding: 10px 24px !important;
+}
+
+@media (max-width: 700px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .titleBlock {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

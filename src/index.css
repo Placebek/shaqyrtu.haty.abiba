@@ -1,0 +1,229 @@
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --gold-pale: #F5E8C0;
+  --green-deep: #F5EFE0;
+  --green-mid: #EDE3CC;
+  --green-light: #D4C5A0;
+  --green-pale: #9B7B5B;
+  --cream: #FAF6ED;
+  --cream-dark: #F0E8D0;
+  --text-dark: #2C1810;
+  --text-mid: #7A5230;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--green-deep);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* ── Ornament SVG pattern ── */
+.ornament-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C9A84C' stroke-width='0.4' opacity='0.12'%3E%3Cpath d='M40 5 L50 20 L65 20 L55 30 L60 45 L40 35 L20 45 L25 30 L15 20 L30 20 Z'/%3E%3Ccircle cx='40' cy='40' r='3'/%3E%3Cpath d='M5 40 Q20 30 40 40 Q60 50 75 40'/%3E%3Cpath d='M5 40 Q20 50 40 40 Q60 30 75 40'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes floatPetal {
+  0%   { transform: translateY(0) rotate(0deg) translateX(0); opacity: 0.6; }
+  50%  { transform: translateY(-20px) rotate(180deg) translateX(10px); opacity: 0.3; }
+  100% { transform: translateY(-100vh) rotate(360deg) translateX(-15px); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.05); opacity: 0.85; }
+}
+
+@keyframes drawLine {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1.0s; }
+
+/* ── Gold shimmer text ── */
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--gold) 0%,
+    var(--gold-light) 30%,
+    #fff8e1 50%,
+    var(--gold-light) 70%,
+    var(--gold) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Section base ── */
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Divider ornament ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.divider-line {
+  height: 1px;
+  width: 80px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.divider-diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+
+/* ── Button ── */
+.btn-gold {
+  display: inline-block;
+  padding: 14px 40px;
+  border: 1px solid var(--gold);
+  color: var(--text-dark);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201, 168, 76, 0.4);
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 12px 36px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background: rgba(201, 168, 76, 0.12);
+  transform: translateY(-2px);
+}
+
+/* ── Input styles ── */
+.form-input {
+  width: 100%;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s, background 0.3s;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+.form-input:focus {
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.form-input::placeholder {
+  color: rgba(44, 24, 16, 0.35);
+}
+
+select.form-input option {
+  background: var(--cream);
+  color: var(--text-dark);
+}
+
+/* ── Petals ── */
+.petal {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatPetal linear infinite;
+  font-size: 20px;
+}

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:shakyru-studio.kz)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}
