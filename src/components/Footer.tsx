@@ -16,7 +16,7 @@ const Footer: React.FC = () => (
       <p className={styles.date}>25 · 07 · 2026</p>
       <HorizontalBorder width={300} />
       <p className={styles.blessing}>
-        Той иелері: Қуаныш пен Кенжегүл
+        Той иелері: Қуаныш пен Кенжегуль
       </p>
       <p className={styles.sub}>«Абиба» мейрамханасы · Сағат 13:00</p>
       <p className={styles.copy}>Бұл сайт сізге арнайы жасалды ♥</p>

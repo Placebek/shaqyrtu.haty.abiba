@@ -53,7 +53,7 @@ const Details: React.FC = () => {
             </div>
             <h3 className={styles.cardTitle}>Той күні</h3>
             <p className={styles.cardMain}>25 шілде, 2026</p>
-            <p className={styles.cardSub}>Шаршы күн</p>
+            <p className={styles.cardSub}>Сенбі күні</p>
           </div>
 
           {/* Time card */}

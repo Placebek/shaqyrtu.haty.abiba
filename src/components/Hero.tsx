@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
       <div className={styles.content}>
         {/* Hosts */}
         <p className={`${styles.hosts} animate-fade-up delay-1`} style={{ opacity: 0 }}>
-          Қуаныш пен Кенжегүл
+          Қуаныш пен Кенжегуль
         </p>
         <p className={`${styles.hostsSub} animate-fade-up delay-2`} style={{ opacity: 0 }}>
           балаларының той — шашуына шақырады
@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
             <span className={styles.dateSep}>·</span>
             <span className={styles.dateNum}>2026</span>
           </div>
-          <p className={styles.dateLabel}>ШІЛДЕ · ШАРШЫ КҮН</p>
+          <p className={styles.dateLabel}>ШІЛДЕ · СЕНБІ КҮНІ</p>
         </div>
 
         {/* CTA */}
