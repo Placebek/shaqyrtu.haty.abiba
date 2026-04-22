@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './MusicPlayer.module.css'
-import music from '../assets/mp3/1687771430.mp3'
+import music from '../assets/mp3/ak-koilek.mp3'
 
 const MusicPlayer: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement>(null)
